@@ -22,6 +22,3 @@ module.exports.checkParameterIsMissing = (req,res,next)=>{
       next();
    }
 }
-
-//Check parameters type in request body.(Required format , data type ) 
-// module.exports.
