@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const route_model = require("../models/requestModel");
 const checkParameter = require("../middlewear/checkParameter");
-const error =require("../middlewear/errorHandling");
+// const error =require("../middlewear/errorHandling");
 
 
 
 // Create post method for get records from DB.
- router.post('/',checkParameter.checkParameterIsMissing,(req,res)=>{
+ router.post('/',(req,res)=>{
     route_model.aggregate([{
         $project:{
             _id :false,
@@ -29,7 +29,7 @@ const error =require("../middlewear/errorHandling");
     })
     res.json(mainRoute);
     }).catch((err) => {
-        error.sysError(res,err);
+        
     })
 });
  module.exports = router;

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 require('dotenv').config()
-const error = require("../middlewear/errorHandling");
+// const error = require("../middlewear/errorHandling");
 
 module.exports = () => {
     mongoose.connect(process.env.DB_URI, 
