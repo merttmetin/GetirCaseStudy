@@ -5,7 +5,7 @@ const checkParameter = require("../middlewear/checkParameter");
 
 // Create post method for get records from DB.
 
-router.get('/test', function (req, res) {
+router.get('/test2', function (req, res) {
     res.send('hello world')
 });
 
