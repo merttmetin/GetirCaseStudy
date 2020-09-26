@@ -4,6 +4,11 @@ const route_model = require("../models/RequestModel");
 const checkParameter = require("../middlewear/checkParameter");
 
 // Create post method for get records from DB.
+
+router.get('/test', function (req, res) {
+    res.send('hello world')
+});
+
  router.post('/',(req,res)=>{
 
     const params  = req.body;
