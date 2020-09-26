@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const route_model = require("../models/RequestModel");
+const route_model = require("../models/requestModel");
 const checkParameter = require("../middlewear/checkParameter");
+const error =require("../middlewear/errorHandling");
+
+
 
 // Create post method for get records from DB.
- router.post('/',(req,res)=>{
-
-    const params  = req.body;
-
+ router.post('/',checkParameter.checkParameterIsMissing,(req,res)=>{
     route_model.aggregate([{
         $project:{
             _id :false,
@@ -20,7 +20,6 @@ const checkParameter = require("../middlewear/checkParameter");
     {
         $match :{ $and :[{"createdAt": {$gte : new Date(req.body.startDate),$lte : new Date(req.body.endDate)}}
                         ,{"totalCount": {$gte: req.body.minCount, $lte :  req.body.maxCount}}]
-                        
                 }
     }
     ]).exec().then(data=>{res.status(200).json({
@@ -30,7 +29,7 @@ const checkParameter = require("../middlewear/checkParameter");
     })
     res.json(mainRoute);
     }).catch((err) => {
-        res.json(err);
+        error.sysError(res,err);
     })
 });
  module.exports = router;
