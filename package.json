@@ -1,13 +1,13 @@
 {
   "name": "getir",
   "version": "1.0.0",
-  "description": "",
+  "description": "RESTApi for Getir Case Study",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "jest"
   },
-  "author": "",
+  "author": "Mert METİN",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
