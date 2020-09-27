@@ -4,7 +4,7 @@ const db = require("./helper/dbProc")();
 const mainRoutes = require("./routes/mainRoutes");
 const port = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
-
+const error = require("./middlewear/errorHandling");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -15,3 +15,6 @@ app.listen(port, () => {
 
  app.use('/getRecords',mainRoutes)
 
+ app.use((req, res, next) => {
+  error.notFound(res);
+});

@@ -1,6 +1,6 @@
 const error ={};
 
-// kullanıldı.
+
 // Error Type  : Wrong endpoint for service.
 error.notFound = res => {
     res.status(404).json({
