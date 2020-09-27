@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 require('dotenv').config()
-// const error = require("../middlewear/errorHandling");
 
+//Mongo DB Connection method.
 module.exports = () => {
     mongoose.connect(process.env.DB_URI, 
                 { useNewUrlParser: true 

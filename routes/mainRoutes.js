@@ -9,6 +9,7 @@ const parameterCheck = require("../middlewear/checkParameter");
  router.post('/',parameterCheck.checkParameterIsMissing
                 ,parameterCheck.checkParameterDataType
                 ,(req,res)=>{
+   
     route_model.aggregate([{
         $project:{
             _id :false,
@@ -27,9 +28,11 @@ const parameterCheck = require("../middlewear/checkParameter");
         msg :"success",
         records : data
     })
-    res.json(mainRoute);
+    //res.json(mainRoute);
+    
     }).catch((err) => {
         error.sysEror(res,err);
     })
+  
 });
  module.exports = router;

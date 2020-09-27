@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Data Model
 const recordSchema = mongoose.Schema({
   key: {
     type: String
