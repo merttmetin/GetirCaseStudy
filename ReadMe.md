@@ -1,17 +1,18 @@
 # GETIR CASE STUDY FOR REST API
-
+```
 Rest API Created using NodeJS,Express and MongoDB.
 Using JEST for unit test.
 Finally project deployed to HEROKU.
 Service is available to test as following URL.
-
+```
 https://getir-case-study-mm.herokuapp.com
 
 
 ## Endpoint
+```
 Method Type : POST
 Endpoint : /getRecords`
-
+```
 
 </br>
 <h4>Parameters</h4>
