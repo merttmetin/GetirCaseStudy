@@ -16,7 +16,7 @@ app.listen(port, () => {
 
 app.use('/getRecords',mainRoutes)
 
- app.use((req, res, next) => {
+app.use((req, res, next) => {
   error.notFound(res);
 });
 

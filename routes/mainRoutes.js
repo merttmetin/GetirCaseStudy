@@ -4,7 +4,6 @@ const route_model = require("../models/RequestModel");
 const error  = require("../middlewear/errorHandling");
 const parameterCheck = require("../middlewear/checkParameter");
 
-
 // Create post method for get records from DB.
  router.post('/',parameterCheck.checkParameterIsMissing
                 ,parameterCheck.checkParameterDataType

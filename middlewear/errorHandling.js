@@ -1,6 +1,5 @@
 const error ={};
 
-
 // Error Type  : Wrong endpoint for service.
 error.notFound = res => {
     res.status(404).json({
@@ -8,6 +7,7 @@ error.notFound = res => {
       msg: 'Wrong service endpoint.Please Check !'
     });
 };
+
 // Error Type  : 
 error.sysEror = res => {
     res.status(500).json({
@@ -15,6 +15,7 @@ error.sysEror = res => {
       msg: 'Unexpexted error has occured.'
     });
 };
+
 // Error Type :  Wrong or invalid parameter type in request body.
 error.wrongParameterType = res => {
     res.status(400).json({
@@ -30,6 +31,5 @@ error.missingParameter = res => {
       msg: 'One or more parameter missing. Please make sure your request body as sample in Readme file.'
     });
 };
-
 
 module.exports = error;
