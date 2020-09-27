@@ -5,16 +5,16 @@ const error  = require("../middlewear/errorHandling");
 const parameterCheck = require("../middlewear/checkParameter");
 
 
-
 // Create post method for get records from DB.
- router.post('/',parameterCheck.checkParameterIsMissing,(req,res)=>{
+ router.post('/',parameterCheck.checkParameterIsMissing
+                ,parameterCheck.checkParameterDataType
+                ,(req,res)=>{
     route_model.aggregate([{
         $project:{
             _id :false,
             key : true,
             createdAt : true,
             totalCount:{ $sum: "$counts" },
-           
         }
     },
     {
@@ -29,7 +29,7 @@ const parameterCheck = require("../middlewear/checkParameter");
     })
     res.json(mainRoute);
     }).catch((err) => {
-        
+        error.sysEror(res,err);
     })
 });
  module.exports = router;

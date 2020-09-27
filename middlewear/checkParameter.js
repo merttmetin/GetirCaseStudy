@@ -11,14 +11,35 @@ module.exports.checkParameterIsMissing = (req,res,next)=>{
    if(Object.keys(req.body).length<4){
       error.missingParameter(res);
    }
-   else if(params.startDate == undefined 
-          ||params.endDate == undefined
-          ||params.minCount == undefined
-          ||params.maxCount  == undefined){
+   else if(params.startDate === undefined 
+          ||params.endDate === undefined
+          ||params.minCount === undefined
+          ||params.maxCount  === undefined){
          
       error.missingParameter(res);
    }
    else{
       next();
    }
+}
+module.exports.checkParameterDataType = (req,res,next)=>{
+
+   const params = req.body;
+   //Regex for YYYY-MM-DD format.
+   const dateRgx = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
+
+   if((typeof params.startDate  === "string" && params.startDate.match(dateRgx))
+      &&(typeof params.endDate  === "string"  && params.endDate.match(dateRgx)
+      &&(typeof params.minCount === "number")
+      &&(typeof params.maxCount === "number"))
+      )
+   {
+         next();
+   }
+   else{
+      error.wrongParameterType(res);
+   }
+
+
+
 }

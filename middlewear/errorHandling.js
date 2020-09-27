@@ -8,7 +8,6 @@ error.notFound = res => {
       msg: 'Wrong service endpoint.Please Check !'
     });
 };
-
 // Error Type  : 
 error.sysEror = res => {
     res.status(500).json({
@@ -16,12 +15,11 @@ error.sysEror = res => {
       msg: 'Unexpexted error has occured.'
     });
 };
-
 // Error Type :  Wrong or invalid parameter type in request body.
 error.wrongParameterType = res => {
     res.status(400).json({
       code: 101,
-      msg: 'Unexpexted type for request.Please check!'
+      msg: 'Unexpexted type for request.Please check! Please enter the start and end date YYYY-MM-DD format or minCount and maxCount as a number.'
     });
 };
 
@@ -33,14 +31,5 @@ error.missingParameter = res => {
     });
 };
 
-
-
-// DB Connection Failed
-error.dbError =(res,err)=>{
-    res.status(400).json({
-        code: 105,
-        msg: 'One or more parameter missing. Please make sure your request body as sample in Readme file.'
-    });
-}
 
 module.exports = error;
