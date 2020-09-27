@@ -20,7 +20,7 @@ Request parameters must be as defined below.
 
 
 </br>
-<h4>Parameters</h4>
+<h4>PARAMETERS</h4>
 <table>
 <thead>
 <tr>
