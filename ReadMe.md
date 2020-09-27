@@ -4,15 +4,18 @@ Rest API Created using NodeJS,Express and MongoDB.
 Using JEST for unit test.
 Finally project deployed to HEROKU.
 Service is available to test as following URL.
-```
 https://getir-case-study-mm.herokuapp.com
+```
+
 
 
 ## Endpoint
 ```
 Method Type : POST
 Endpoint : /getRecords`
+Request parameters must be as defined below.
 ```
+
 
 </br>
 <h4>Parameters</h4>
@@ -40,13 +43,13 @@ Endpoint : /getRecords`
 </tr>
 <tr>
 <td align="left">minCount</td>
-<td align="center">string, integer</td>
+<td align="center">integer</td>
 <td align="left">Min value of totalCount.</td>
 <td align="left">Yes</td>
 </tr>
 <tr>
 <td align="left">maxCount</td>
-<td align="center">string, integer</td>
+<td align="center">integer</td>
 <td align="left">Max value of totalCount</td>
 <td align="left">Yes</td>
 </tr>
