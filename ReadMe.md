@@ -11,7 +11,7 @@ https://getir-case-study-mm.herokuapp.com
 
 
 
-## Endpoint
+## API ENDPOINT
 ```
 Method Type : POST
 Endpoint : /getRecords`
@@ -58,7 +58,7 @@ Request parameters must be as defined below.
 </tbody>
 </table>
 
-<h4>Sample Request</h4>
+<h4>SAMPLE REQUEST</h4>
 
 ```
 {
@@ -69,7 +69,7 @@ Request parameters must be as defined below.
 }
 ```
 
-<h4>Sample Response</h4>
+<h4>SAMPLE RESPONSE</h4>
 
 ```
 {
